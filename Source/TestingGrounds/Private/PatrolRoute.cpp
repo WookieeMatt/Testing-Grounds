@@ -1,6 +1,6 @@
 // Curiouser&Curiouser Games
 
-#include "Public/PatrolRoute.h"
+#include "PatrolRoute.h"
 
 
 TArray<AActor*> UPatrolRoute::GetPatrolPoints() const
