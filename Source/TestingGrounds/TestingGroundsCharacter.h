@@ -4,12 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "FirstPersonCharacter.generated.h"
+#include "TestingGroundsCharacter.generated.h"
 
 class UInputComponent;
 
 UCLASS(config=Game)
-class AFirstPersonCharacter : public ACharacter
+class ATestingGroundsCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -46,7 +46,7 @@ class AFirstPersonCharacter : public ACharacter
 	class UMotionControllerComponent* L_MotionController;
 
 public:
-	AFirstPersonCharacter();
+	ATestingGroundsCharacter();
 
 protected:
 	virtual void BeginPlay();
