@@ -2,7 +2,7 @@
 
 #include "ChooseNextWaypoint.h"
 #include "AIController.h"
-#include "Public/PatrolRoute.h"
+#include "NPC/PatrolRoute.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 
