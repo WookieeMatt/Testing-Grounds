@@ -2,11 +2,7 @@
 
 #include "TestingGroundsGameMode.h"
 #include "TestingGroundsHUD.h"
-<<<<<<< HEAD
 #include "Player/FirstPersonCharacter.h"
-=======
-#include "TestingGroundsCharacter.h"
->>>>>>> parent of fbf5c26... fuck
 #include "UObject/ConstructorHelpers.h"
 
 ATestingGroundsGameMode::ATestingGroundsGameMode()
