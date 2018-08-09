@@ -80,7 +80,6 @@ protected:
 	TouchData	TouchItem;
 	
 protected:
-	void OnFire();
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface
