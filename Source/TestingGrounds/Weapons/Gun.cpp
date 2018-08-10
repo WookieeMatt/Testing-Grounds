@@ -17,7 +17,7 @@ AGun::AGun()
 	FP_Gun->SetOnlyOwnerSee(true);			// only the owning player will see this mesh
 	FP_Gun->bCastDynamicShadow = false;
 	FP_Gun->CastShadow = false;
-	//FP_Gun->SetupAttachment(Mesh1P, TEXT("GripPoint"));
+	// FP_Gun->SetupAttachment(Mesh1P, TEXT("GripPoint"));
 
 	FP_MuzzleLocation = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleLocation"));
 	FP_MuzzleLocation->SetupAttachment(FP_Gun);
