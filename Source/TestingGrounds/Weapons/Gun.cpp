@@ -2,6 +2,7 @@
 #include "BallProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Kismet/GameplayStatics.h"
+#include "GameFramework/Actor.h"
 #include "MotionControllerComponent.h"
 
 
@@ -18,6 +19,7 @@ AGun::AGun()
 	FP_Gun->bCastDynamicShadow = false;
 	FP_Gun->CastShadow = false;
 	//FP_Gun->SetupAttachment(Mesh1P, TEXT("GripPoint"));
+	SetRootComponent(FP_Gun);
 
 	FP_MuzzleLocation = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleLocation"));
 	FP_MuzzleLocation->SetupAttachment(FP_Gun);
