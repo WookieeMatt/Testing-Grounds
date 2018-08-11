@@ -10,6 +10,7 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
+#include "Components/SceneComponent.h"
 #include "Weapons/Gun.h"
 #include "Components/SkeletalMeshComponent.h"
 
