@@ -41,7 +41,7 @@ AMannequin::AMannequin()
 void AMannequin::BeginPlay()
 {
 	Super::BeginPlay();
-	if (GunBlueprint == NULL) {
+	if (GunBlueprint == nullptr) {
 		UE_LOG(LogTemp, Warning, TEXT("Gun blueprint missing."));
 		return;
 	}
@@ -55,10 +55,11 @@ void AMannequin::BeginPlay()
 	{
 		Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint")); 
 	}
-		
-	Gun->AnimInstance = GetMesh()->GetAnimInstance();
 
-	if (InputComponent != NULL)
+	Gun->AnimInstance1P = Mesh1P->GetAnimInstance();
+	Gun->AnimInstance3P = GetMesh()->GetAnimInstance();
+
+	if (InputComponent != nullptr)
 	{	
 	InputComponent->BindAction("Fire", IE_Pressed, this, &AMannequin::PullTrigger);
 	}
