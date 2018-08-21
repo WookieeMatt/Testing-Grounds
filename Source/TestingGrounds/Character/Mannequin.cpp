@@ -1,4 +1,4 @@
-// Curiouser&Curiouser Games
+// Curiouser Games
 
 #include "Mannequin.h"
 #include "Weapons/BallProjectile.h"
@@ -41,7 +41,8 @@ AMannequin::AMannequin()
 void AMannequin::BeginPlay()
 {
 	Super::BeginPlay();
-	if (GunBlueprint == nullptr) {
+	if (GunBlueprint == nullptr) 
+	{
 		UE_LOG(LogTemp, Warning, TEXT("Gun blueprint missing."));
 		return;
 	}
