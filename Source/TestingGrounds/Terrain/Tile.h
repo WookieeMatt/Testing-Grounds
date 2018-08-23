@@ -30,7 +30,7 @@ private:
 	
 	bool FindEmptyLocation(FVector& OutLocation, float Radius);
 
-	void PlaceActor(TSubclassOf<AActor> ToSpawn, FVector SpawnPoint);
+	void PlaceActor(TSubclassOf<AActor> ToSpawn, FVector SpawnPoint, float Rotation);
 
 	bool CanSpawnAtLocation(FVector Location, float Radius);
 };
