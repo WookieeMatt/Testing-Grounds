@@ -3,11 +3,18 @@
 #include "InfiniteTerrainGameMode.h"
 #include "GameFramework/Volume.h"
 #include "EngineUtils.h"
+#include "ActorPool.h"
+#include "NavMeshBoundsVolume.h"
 
+
+AInfiniteTerrainGameMode::AInfiniteTerrainGameMode()
+{
+	NavMeshBoundsVolumePool = CreateDefaultSubobject<UActorPool>(FName("Nav Mesh Bounds Volume Pool"));
+}
 
 void AInfiniteTerrainGameMode::PopulateBoundsVolumePool()
 {
-	auto VolumeIterator = TActorIterator<AVolume>(GetWorld());
+	auto VolumeIterator = TActorIterator<ANavMeshBoundsVolume>(GetWorld());
 	while (VolumeIterator)
 	{
 		AddToPool(*VolumeIterator);
@@ -15,9 +22,8 @@ void AInfiniteTerrainGameMode::PopulateBoundsVolumePool()
 	}
 }
 
-void AInfiniteTerrainGameMode::AddToPool(AVolume * VolumeToAdd)
+
+void AInfiniteTerrainGameMode::AddToPool(ANavMeshBoundsVolume *VolumeToAdd)
 {
-	auto VolumeName = VolumeToAdd->GetName();
-	if(VolumeName.Contains(FString("NavMesh"),ESearchCase::CaseSensitive,ESearchDir::FromStart))
-	UE_LOG(LogTemp, Warning, TEXT("Found NavMesh %s"), *VolumeToAdd->GetName());
+	UE_LOG(LogTemp, Warning, TEXT("Found Actor: %s"), *VolumeToAdd->GetName());
 }
