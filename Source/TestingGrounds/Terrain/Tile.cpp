@@ -27,13 +27,10 @@ void ATile::SetPool(UActorPool* InPool)
 void ATile::PositionNavMeshBoundsVolume()
 {
 	NavMeshBoundsVolume = Pool->Checkout();
-	if (NavMeshBoundsVolume == nullptr)
-	{
-		UE_LOG(LogTemp, Error, TEXT("[%s] Not enough actors in pool"), *GetName());
-		return;
-	}
-	UE_LOG(LogTemp, Error, TEXT("[%s] Checked Out {%s}"), *GetName(), *NavMeshBoundsVolume->GetName());
-	NavMeshBoundsVolume->SetActorLocation(GetActorLocation());
+	if (!ensure (NavMeshBoundsVolume)) { return; }
+	FVector NavMLocation = GetActorLocation();
+	NavMLocation.X += 2000;
+	NavMeshBoundsVolume->SetActorLocation(NavMLocation);
 }
 
 void ATile::PlaceActors(TSubclassOf<AActor> ToSpawn, int MinSpawn, int MaxSpawn, float Radius, float MinScale, float MaxScale)
