@@ -96,6 +96,10 @@ void ATile::PlaceActor(TSubclassOf<AActor> ToSpawn, const FSpawnPosition& SpawnP
 void ATile::PlaceActor(TSubclassOf<APawn> ToSpawn, FSpawnPosition SpawnPosition)
 {
 	APawn* Spawned = GetWorld()->SpawnActor<APawn>(ToSpawn);
+	if (Spawned == nullptr)
+	{
+		return;
+	}
 	if (Spawned)
 	{
 		Spawned->SetActorRelativeLocation(SpawnPosition.Location);
